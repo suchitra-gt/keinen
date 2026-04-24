@@ -10,6 +10,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap"
     rel="stylesheet">
   <style>
+    
     :root {
       --bg-deep: #FFFFFF;
       --bg-soft: #F5F5F5;
@@ -17,10 +18,13 @@
       --secondary-text: #9E9E9E;
       --accent-1: #B71C1C;
       --accent-2: #7F0000;
-      --border: rgba(183, 28, 28, 0.15);
-      --mesh-gradient: radial-gradient(at 0% 0%, rgba(183, 28, 28, 0.2) 0, transparent 50%), 
-                       radial-gradient(at 100% 100%, rgba(127, 0, 0, 0.15) 0, transparent 50%);
+      --border: rgba(183, 28, 28, 0.2);
+      --mesh-gradient: radial-gradient(at 0% 0%, rgba(183, 28, 28, 0.4) 0, transparent 70%), 
+                       radial-gradient(at 100% 100%, rgba(127, 0, 0, 0.3) 0, transparent 70%);
     }
+    
+    
+    .ind-card:hover 
 
     * { box-sizing: border-box; margin: 0; padding: 0; }
     body { font-family: 'Plus Jakarta Sans', sans-serif; background-color: var(--bg-deep); color: var(--primary-text); line-height: 1.6; overflow-x: hidden; }
@@ -40,12 +44,12 @@
     .nav-links li a:hover, .nav-links li a.active { color: var(--accent-1); }
 
     .ind-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(350px, 1fr)); gap: 30px; }
-    .ind-card { min-height: 400px; background-size: cover; background-position: center; display: flex; align-items: flex-end; position: relative; overflow: hidden; border-radius: 24px; border: 2px solid var(--border); transition: 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275); }
-    .ind-overlay { padding: 40px; width: 100%; background: linear-gradient(to top, rgba(0,0,0,0.95) 0%, rgba(0,0,0,0.4) 70%, transparent 100%); color: white !important; transition: 0.4s; }
+    
+    
     .ind-overlay h4 { font-size: 24px; font-weight: 800; margin-bottom: 12px; color: white !important; }
     .ind-overlay p { font-size: 14px; color: rgba(255,255,255,0.8) !important; margin-bottom: 0; }
     .ind-card:hover { transform: translateY(-10px); }
-    .ind-card:hover .ind-overlay { background: linear-gradient(to top, var(--accent-1) 0%, rgba(0,0,0,0.7) 100%); }
+    .ind-card:hover 
 
     footer { border-top: 1px solid var(--border); padding: 80px 0 40px; background: var(--bg-soft); }
 
@@ -68,7 +72,22 @@
     }
     .whatsapp-btn:hover { transform: scale(1.1) rotate(10deg); box-shadow: 0 15px 35px rgba(37, 211, 102, 0.5); }
     .whatsapp-btn svg { width: 32px; height: 32px; fill: white; }
-  </style>
+  
+    :root {
+      --bg-deep: #FFFFFF;
+      --bg-soft: #F5F5F5;
+      --primary-text: #212121;
+      --secondary-text: #9E9E9E;
+      --accent-1: #B71C1C;
+      --accent-2: #7F0000;
+      --border: rgba(183, 28, 28, 0.2);
+      --mesh-gradient: radial-gradient(at 0% 0%, rgba(183, 28, 28, 0.4) 0, transparent 70%), 
+                       radial-gradient(at 100% 100%, rgba(127, 0, 0, 0.3) 0, transparent 70%);
+    }
+    .ind-card { min-height: 400px; background-size: cover; background-position: center; display: flex; align-items: flex-end; position: relative; overflow: hidden; border-radius: 24px; border: 3px solid var(--border); }
+    .ind-overlay { padding: 40px; width: 100%; background: linear-gradient(to top, rgba(0,0,0,0.95) 0%, rgba(0,0,0,0.6) 80%, transparent 100%); color: white !important; transition: 0.4s; }
+    .ind-card:hover .ind-overlay { background: linear-gradient(to top, var(--accent-1) 0%, rgba(0,0,0,0.8) 100%); }
+    </style>
 </head>
 
 <body>
@@ -159,3 +178,4 @@
   </script>
 </body>
 </html>
+
