@@ -595,10 +595,7 @@
       transition: 0.4s;
     }
 
-    .pill-card:hover {
-      border-color: var(--accent-2);
-      transform: translateY(-5px);
-    }
+    
 
     .pill-card .eyebrow {
       margin-bottom: 12px;
@@ -1011,14 +1008,12 @@
         background: rgba(255, 255, 255, 0.98) !important;
     }
     .logo { color: var(--primary-text) !important; }
-    .pill-card, .ind-card {
-        background: var(--bg-soft) !important;
-        border-color: var(--border) !important;
+        .pill-card, .ind-card {
+        background-color: var(--bg-soft);
+        border: 2px solid var(--border);
     }
-    .pill-card:hover {
-        background: white !important;
-        border-color: var(--accent-1) !important;
-    }
+    
+    
     body { background: var(--bg-deep); color: var(--primary-text); }
     p { color: var(--secondary-text); }
     .eyebrow { color: var(--accent-1) !important; }
@@ -1457,25 +1452,29 @@
         <h2 class="h2-main">Built for Environments Where Precision Is Non-Negotiable.</h2>
       </div>
       <div class="ind-grid">
-        <div class="ind-card" style="background-image: url('https://images.openai.com/static-rsc-4/Gi_qmzM8_9GA__4uyVmsadaLRA8AJH2ASW9IONbn7vw0pe0pnMoaSGPuj5lNKLNRSLQ_Vj1KXZmN4l94wcaOdlVBDINPgxX2iLpQpf3uXYUKt56GvmYQ0dBWWjs-NZ3Bpf0Ov-AUqB3FN6j5jGIjyEhOPKMceZd-LrZF6xuVk-m4GgH3jmdMF1DuxRL5auFo?purpose=fullsize');">
-          <h4>Manufacturing & Process</h4>
-          <p>ISA-95 architectures, MES-SCADA integration, predictive maintenance, full Industry X.0 transformation.
-            Automotive, plastics, metals, process plant.</p>
+        <div class="ind-card reveal" style="background-image: url('https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?auto=format&fit=crop&q=80&w=800');">
+          <div class="ind-overlay">
+            <h4>Manufacturing & Process</h4>
+            <p>ISA-95 architectures, MES-SCADA integration, predictive maintenance, full Industry X.0 transformation. Automotive, plastics, metals, process plant.</p>
+          </div>
         </div>
-        <div class="ind-card" style="background-image: url('https://images.openai.com/static-rsc-4/1HTmJFyuoSPVDDPwK5RAbPbft_MOYvrW6ylo9g-RFVJeeF-YhMpxvgNjtuuTtp8Km0Crkzu4LWSJJj0vL6B9ugOEimBbXBe5sE4NixeKOvHel0l2dzPzWo0JRBW864BSoI8g8gNfP-oMhBnmtrcDRsbLg4xlXQxhX3jA2k2cB9CLVMlUpqedYRMML7T7iqXY?purpose=fullsize');">
-          <h4>Oil & Gas</h4>
-          <p>ATEX/IECEx certified for explosive areas. SIS integration. Offshore, subsea automation. Remote monitoring
-            for E&P and midstream.</p>
+        <div class="ind-card reveal" style="background-image: url('https://images.unsplash.com/photo-1516192511155-0c141a8c5b9b?auto=format&fit=crop&q=80&w=800');">
+          <div class="ind-overlay">
+            <h4>Oil & Gas</h4>
+            <p>ATEX/IECEx certified for explosive areas. SIS integration. Offshore, subsea automation. Remote monitoring for E&P and midstream.</p>
+          </div>
         </div>
-        <div class="ind-card" style="background-image: url('https://images.openai.com/static-rsc-4/kYkC1lGmyhIKh5QJaKobIgT6ydI3YEy4ykhlFZtWFRFgk8xcPdNtP3im52LTniTTGlxEAmDob8UeD8XtFcL_Efv3dcCq6LOYPh3U8zLJRaomng07suC-ttdKI-yaA_oNeaV6rxISVyKqClu1HSvyRk7my-Au5PoY9PdjIaQ77mqsPvIJwjThnd5zZeOTGjSF?purpose=fullsize');">
-          <h4>Pharmaceuticals & Biotech</h4>
-          <p>21 CFR Part 11 systems. GAMP 5 validated automation. Cleanroom monitoring. Serialisation and
-            track-and-trace workflows.</p>
+        <div class="ind-card reveal" style="background-image: url('https://images.unsplash.com/photo-1587854692152-cbe660dbbb88?auto=format&fit=crop&q=80&w=800');">
+          <div class="ind-overlay">
+            <h4>Pharmaceuticals & Biotech</h4>
+            <p>21 CFR Part 11 systems. GAMP 5 validated automation. Cleanroom monitoring. Serialisation and track-and-trace workflows.</p>
+          </div>
         </div>
-        <div class="ind-card" style="background-image: url('https://images.openai.com/static-rsc-4/DRJ01rxEEdsPn3Mqf90aW9n_pwfDlnjPEb2xE54d3PeDh5t3x0q5AtBMpa3YhkYSAiFV2DO5WJgr2R8hiujzPV6oFXI91mnSiPOw1g9Hv64A7Xaclk8sN4g0Z-8ucNOYLGwo3p_8AswuWyxV_NwYMweBV-0gMrB_zUL0_gPJCuOO7JMcwAYvUEMwPQkKYX9r?purpose=fullsize');">
-          <h4>FMCG & Packaging</h4>
-          <p>High-speed packaging line monitoring, OEE optimisation. AI-powered visual quality inspection. Real-time
-            production dashboards.</p>
+        <div class="ind-card reveal" style="background-image: url('https://images.unsplash.com/photo-1530124566582-ab330045059e?auto=format&fit=crop&q=80&w=800');">
+          <div class="ind-overlay">
+            <h4>FMCG & Packaging</h4>
+            <p>High-speed packaging line monitoring, OEE optimisation. AI-powered visual quality inspection. Real-time production dashboards.</p>
+          </div>
         </div>
         <div class="ind-card" style="background-image: url('https://images.openai.com/static-rsc-4/wS-SZWF3pQrRUof-TI-E48Nt9traQ8re9ZIYXREuymL4ua9eDyEIVUuqugnzef8x3KGH4fmhDTCKoIkLFDSWxcGmcAtKxfh4TObTT85R041dSHUSvvkQA3CqlcqbNX8zQY1KkBp97PpPkhFTDNG3VIguf2pha0oWXPzPWsclVvFMgLm8BQ53PrIwI0H_xVue?purpose=fullsize');">
           <h4>Healthcare Facilities</h4>
