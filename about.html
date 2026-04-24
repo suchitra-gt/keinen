@@ -10,17 +10,25 @@
   <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap"
     rel="stylesheet">
   <style>
+    
     :root {
-      --bg-deep: #050505;
-      --bg-soft: #0A0A0A;
-      --primary-text: #FFFFFF;
-      --secondary-text: #A0A0A0;
-      --accent-1: #FF3B3B;
-      --accent-2: #D32F2F;
-      --border: rgba(255, 255, 255, 0.08);
-      --mesh-gradient: radial-gradient(at 0% 0%, rgba(255, 59, 59, 0.15) 0, transparent 50%), 
-                       radial-gradient(at 100% 100%, rgba(211, 47, 47, 0.1) 0, transparent 50%);
+      --bg-deep: #FFFFFF;
+      --bg-soft: #F5F5F5;
+      --primary-text: #212121;
+      --secondary-text: #9E9E9E;
+      --accent-1: #E53935;
+      --accent-2: #C62828;
+      --border: rgba(0, 0, 0, 0.08);
+      --mesh-gradient: radial-gradient(at 0% 0%, rgba(229, 57, 53, 0.05) 0, transparent 50%), 
+                       radial-gradient(at 100% 100%, rgba(198, 40, 40, 0.03) 0, transparent 50%);
     }
+    body { background-color: var(--bg-deep); color: var(--primary-text); }
+    .navbar { background: rgba(255, 255, 255, 0.8); backdrop-filter: blur(20px); border-bottom: 1px solid var(--border); }
+    .logo { color: var(--primary-text) !important; }
+    .h2-main { color: var(--primary-text); }
+    .pill-card, .ind-card, .contact-box { background: var(--bg-soft) !important; border-color: var(--border) !important; }
+    p { color: var(--secondary-text); }
+    footer { background: var(--bg-soft); }
 
     * { box-sizing: border-box; margin: 0; padding: 0; }
     body { 
@@ -176,3 +184,4 @@
   </script>
 </body>
 </html>
+
