@@ -15,14 +15,14 @@
       --bg-soft: #F5F5F5;
       --primary-text: #212121;
       --secondary-text: #9E9E9E;
-      --accent-1: #E53935;
-      --accent-2: #C62828;
-      --accent-3: #B71C1C;
-      --glass: rgba(0, 0, 0, 0.03);
-      --border: rgba(0, 0, 0, 0.08);
+      --accent-1: #B71C1C;
+      --accent-2: #7F0000;
+      --accent-3: #4B0000;
+      --glass: rgba(183, 28, 28, 0.05);
+      --border: rgba(183, 28, 28, 0.15);
       --gradient: linear-gradient(135deg, var(--accent-1), var(--accent-2));
-      --mesh-gradient: radial-gradient(at 0% 0%, rgba(229, 57, 53, 0.15) 0, transparent 50%), 
-                       radial-gradient(at 100% 100%, rgba(198, 40, 40, 0.1) 0, transparent 50%);
+      --mesh-gradient: radial-gradient(at 0% 0%, rgba(183, 28, 28, 0.2) 0, transparent 50%), 
+                       radial-gradient(at 100% 100%, rgba(127, 0, 0, 0.15) 0, transparent 50%);
     }
 
     * {
@@ -116,7 +116,7 @@
     }
 
     .text-gradient {
-      background: linear-gradient(90deg, var(--accent-1), #FF5252, var(--accent-1));
+      background: linear-gradient(90deg, var(--accent-1), #D32F2F, var(--accent-1));
       background-size: 200% auto;
       -webkit-background-clip: text;
       background-clip: text;
@@ -980,28 +980,28 @@
     }
     .float-item {
         position: absolute;
-        background: rgba(229, 57, 53, 0.08);
-        border: 1px solid rgba(229, 57, 53, 0.2);
+        background: rgba(183, 28, 28, 0.12);
+        border: 2px solid rgba(183, 28, 28, 0.3);
         border-radius: 24px;
         backdrop-filter: blur(10px);
         animation: float 4s ease-in-out infinite;
     }
     @keyframes float {
         0%, 100% { transform: translateY(0) rotate(0deg); }
-        50% { transform: translateY(-30px) rotate(5deg); }
+        50% { transform: translateY(-40px) rotate(10deg); }
     }
     .hero-blob {
         position: absolute;
         top: 50%; left: 50%;
-        width: 130%; height: 130%;
-        background: radial-gradient(circle at center, rgba(229, 57, 53, 0.08), transparent 60%);
+        width: 140%; height: 140%;
+        background: radial-gradient(circle at center, rgba(183, 28, 28, 0.15), transparent 60%);
         transform: translate(-50%, -50%);
         z-index: -1;
-        animation: pulse 8s infinite ease-in-out;
+        animation: pulse 6s infinite ease-in-out;
     }
     @keyframes pulse {
-        0%, 100% { transform: translate(-50%, -50%) scale(1); opacity: 0.5; }
-        50% { transform: translate(-50%, -50%) scale(1.1); opacity: 1; }
+        0%, 100% { transform: translate(-50%, -50%) scale(1); opacity: 0.6; }
+        50% { transform: translate(-50%, -50%) scale(1.15); opacity: 1; }
     }
     .navbar {
         background: rgba(255, 255, 255, 0.8) !important;
