@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contact Us | Keinen Techne</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap"
+    rel="stylesheet">
+  <style>
+    :root {
+      --bg-deep: #FFFFFF;
+      --bg-soft: #F5F5F5;
+      --primary-text: #212121;
+      --secondary-text: #9E9E9E;
+      --accent-1: #E53935;
+      --border: rgba(0, 0, 0, 0.08);
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body { font-family: 'Plus Jakarta Sans', sans-serif; background-color: var(--bg-deep); color: var(--primary-text); line-height: 1.6; }
+    .container { max-width: 1440px; margin: 0 auto; padding: 0 40px; }
+    section { padding: 100px 0; }
+    .eyebrow { font-size: 11px; font-weight: 800; letter-spacing: 3px; text-transform: uppercase; color: var(--accent-1); margin-bottom: 24px; display: block; }
+    .h2-main { font-size: clamp(36px, 4vw, 56px); font-weight: 800; margin-bottom: 32px; line-height: 1.1; }
+    .text-gradient { background: linear-gradient(90deg, var(--accent-1), var(--accent-2), var(--accent-1)); background-size: 200% auto; -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent; }
+    
+    .navbar { position: fixed; top: 0; left: 0; width: 100%; height: 90px; display: flex; align-items: center; z-index: 1000; background: rgba(255, 255, 255, 0.8); backdrop-filter: blur(20px); border-bottom: 1px solid var(--border); }
+    .navbar .container { display: flex; justify-content: space-between; align-items: center; width: 100%; }
+    .logo { font-size: 24px; font-weight: 800; letter-spacing: 2px; text-transform: uppercase; }
+    .logo span { color: var(--accent-1); }
+    .nav-links { display: flex; list-style: none; gap: 32px; align-items: center; }
+    .nav-links li a { text-decoration: none; color: var(--secondary-text); font-size: 13px; font-weight: 600; text-transform: uppercase; transition: 0.3s; }
+    .nav-links li a:hover, .nav-links li a.active { color: var(--accent-1); }
+
+    .layout-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 80px; align-items: center; }
+    
+    .contact-box { background: var(--bg-soft); border-radius: 40px; padding: 60px; border: 1px solid var(--border); }
+    .form-group { margin-bottom: 20px; }
+    .form-group input, .form-group select, .form-group textarea { width: 100%; background: var(--bg-deep); border: 1px solid var(--border); padding: 16px; border-radius: 8px; color: var(--primary-text); font-family: inherit; }
+    
+    .btn-p { padding: 18px 40px; background: var(--accent-1); color: white; border: none; border-radius: 100px; font-weight: 800; cursor: pointer; transition: 0.3s; }
+    .btn-p:hover { transform: translateY(-3px); box-shadow: 0 10px 20px rgba(229, 57, 53, 0.2); }
+
+    footer { border-top: 1px solid var(--border); padding: 80px 0 40px; background: var(--bg-soft); }
+    
+    @media (max-width: 1024px) {
+      .layout-grid { grid-template-columns: 1fr; gap: 40px; text-align: center; }
+    }
+  </style>
+</head>
+
+<body>
+  <nav class="navbar">
+    <div class="container">
+      <div class="logo">KEI<span>N</span>EN</div>
+      <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="services.html">Services</a></li>
+        <li><a href="innovation.html">Innovation</a></li>
+        <li><a href="industries.html">Industries</a></li>
+        <li><a href="contact.html" class="active">Contact</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <section style="padding-top: 180px;">
+    <div class="container layout-grid">
+      <div>
+        <span class="eyebrow">Contact Us</span>
+        <h1 class="h2-main">Let's Build Something <br><span class="text-gradient">Extraordinary.</span></h1>
+        <p style="font-size: 18px;">First meeting = structured listening session led by senior engineers, not sales. We ask the right questions and leave you with a clearer path forward.</p>
+
+        <div style="margin-top: 40px; display: flex; flex-direction: column; gap: 20px;">
+          <div style="font-size: 24px; font-weight: 800; color: var(--accent-1);">📞 +91 80415 01718</div>
+          <div>✉️ info@keinen.in</div>
+          <div>📍 Bengaluru, India</div>
+          <div>🕐 Mon–Fri | 9:00 AM – 6:00 PM IST</div>
+        </div>
+      </div>
+
+      <div class="contact-box">
+        <form onsubmit="event.preventDefault(); alert('Message sent!');">
+          <div class="form-group">
+            <input type="text" placeholder="Full Name*" required>
+          </div>
+          <div class="form-group">
+            <input type="email" placeholder="Business Email*" required>
+          </div>
+          <div class="form-group">
+            <select>
+              <option disabled selected>Select Industry</option>
+              <option>Manufacturing</option>
+              <option>Oil & Gas</option>
+              <option>Pharmaceuticals</option>
+              <option>Healthcare</option>
+              <option>Finance</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <textarea placeholder="How Can We Help?" rows="5" required></textarea>
+          </div>
+          <button type="submit" class="btn-p" style="width: 100%;">Submit: Start the Conversation</button>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="container">
+      <div style="text-align: center; color: var(--secondary-text);">
+        <p>&copy; 2025 Keinen Techne. All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>

@@ -1,0 +1,575 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>About Us | Keinen Techne</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap"
+    rel="stylesheet">
+  <style>
+    :root {
+      --bg-deep: #FFFFFF;
+      --bg-soft: #F5F5F5;
+      --primary-text: #212121;
+      --secondary-text: #9E9E9E;
+      --accent-1: #E53935;
+      --accent-2: #C62828;
+      --accent-3: #B71C1C;
+      --glass: rgba(0, 0, 0, 0.03);
+      --border: rgba(0, 0, 0, 0.08);
+      --gradient: linear-gradient(135deg, var(--accent-1), var(--accent-2));
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      background-color: var(--bg-deep);
+      background-image: 
+        radial-gradient(circle at 20% 30%, rgba(229, 57, 53, 0.03) 0%, transparent 40%),
+        radial-gradient(circle at 80% 70%, rgba(198, 40, 40, 0.03) 0%, transparent 40%);
+      background-attachment: fixed;
+      color: var(--primary-text);
+      overflow-x: hidden;
+      line-height: 1.6;
+    }
+
+    body::before {
+      content: '';
+      position: fixed;
+      top: 0; left: 0; width: 100%; height: 100%;
+      background-image: 
+        linear-gradient(var(--border) 1px, transparent 1px),
+        linear-gradient(90deg, var(--border) 1px, transparent 1px);
+      background-size: 50px 50px;
+      opacity: 0.5;
+      pointer-events: none;
+      z-index: -1;
+      animation: gridShift 40s linear infinite;
+    }
+
+    @keyframes gridShift {
+      from { background-position: 0 0; }
+      to { background-position: 50px 50px; }
+    }
+
+    .container {
+      max-width: 1440px;
+      margin: 0 auto;
+      padding: 0 40px;
+    }
+
+    section {
+      padding: 100px 0;
+      position: relative;
+    }
+
+    .eyebrow {
+      font-size: 11px;
+      font-weight: 800;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      color: var(--accent-1);
+      margin-bottom: 24px;
+      display: block;
+      animation: pulseIn 2s infinite ease-in-out;
+    }
+
+    @keyframes pulseIn {
+        0%, 100% { opacity: 0.6; }
+        50% { opacity: 1; letter-spacing: 5px; }
+    }
+
+    .h2-main {
+      font-size: clamp(36px, 4vw, 56px);
+      font-weight: 800;
+      margin-bottom: 32px;
+      line-height: 1.1;
+      letter-spacing: -1px;
+    }
+
+    .h3-main {
+      font-size: 24px;
+      font-weight: 700;
+      margin-bottom: 16px;
+    }
+
+    p {
+      font-size: 16px;
+      color: var(--secondary-text);
+      margin-bottom: 20px;
+    }
+
+    .text-gradient {
+      background: linear-gradient(90deg, var(--accent-1), var(--accent-2), var(--accent-1));
+      background-size: 200% auto;
+      -webkit-background-clip: text;
+      background-clip: text;
+      -webkit-text-fill-color: transparent;
+      animation: shine 3s linear infinite;
+    }
+
+    @keyframes shine {
+      to { background-position: 200% center; }
+    }
+
+    .reveal {
+      opacity: 0;
+      transform: translateY(40px);
+      transition: opacity 1s cubic-bezier(0.2, 0.8, 0.2, 1), transform 1s cubic-bezier(0.2, 0.8, 0.2, 1);
+    }
+    .reveal.active {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    .pill-card, .ind-card, .cta-card, .diff-item {
+        transition: transform 0.2s cubic-bezier(0.1, 0.7, 0.1, 1), border-color 0.4s ease, box-shadow 0.4s ease, background 0.4s ease;
+        position: relative;
+        z-index: 1;
+        cursor: pointer;
+        perspective: 1000px;
+        overflow: hidden;
+        background: rgba(255, 255, 255, 0.03);
+        border: 1px solid rgba(255, 255, 255, 0.08);
+    }
+    
+    .pill-card::before, .ind-card::before, .cta-card::before, .diff-item::before {
+        content: '';
+        position: absolute;
+        top: 0; left: 0; width: 100%; height: 100%;
+        background: radial-gradient(circle at var(--mouse-x) var(--mouse-y), rgba(229, 57, 53, 0.05) 0%, transparent 60%);
+        opacity: 0;
+        transition: opacity 0.5s ease;
+        pointer-events: none;
+        z-index: 10;
+    }
+
+    .pill-card:hover::before, .ind-card:hover::before, .cta-card:hover::before, .diff-item:hover::before {
+        opacity: 1;
+    }
+
+    .pill-card:hover, .ind-card:hover, .cta-card:hover, .diff-item:hover {
+        transform: scale(1.05) translateY(-20px);
+        z-index: 100 !important;
+        border-color: var(--accent-1);
+        background-color: var(--bg-deep) !important;
+        box-shadow: 0 40px 100px rgba(0,0,0,0.1), 0 0 40px rgba(229, 57, 53, 0.1);
+    }
+
+    .btn-p {
+        padding: 18px 40px;
+        background: var(--accent-1);
+        color: white !important;
+        border-radius: 100px;
+        font-weight: 800;
+        font-size: 14px;
+        text-decoration: none;
+        transition: 0.3s cubic-bezier(0.2, 0.8, 0.2, 1);
+        display: inline-flex;
+        align-items: center;
+        gap: 10px;
+        border: none;
+        cursor: pointer;
+        position: relative;
+        overflow: hidden;
+    }
+
+    .btn-s {
+        padding: 18px 40px;
+        border: 1px solid var(--border);
+        border-radius: 100px;
+        font-weight: 800;
+        font-size: 14px;
+        text-decoration: none;
+        color: var(--primary-text) !important;
+        transition: 0.3s cubic-bezier(0.2, 0.8, 0.2, 1);
+        display: inline-flex;
+        align-items: center;
+        cursor: pointer;
+        background: transparent;
+        backdrop-filter: blur(10px);
+    }
+
+    .navbar {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 90px;
+      display: flex;
+      align-items: center;
+      z-index: 1000;
+      background: rgba(255, 255, 255, 0.8);
+      backdrop-filter: blur(20px);
+      border-bottom: 1px solid var(--border);
+      transition: 0.4s;
+    }
+
+    .navbar.scrolled {
+      height: 75px;
+      background: rgba(255, 255, 255, 0.98);
+    }
+
+    .navbar .container {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      width: 100%;
+    }
+
+    .logo {
+      font-size: 24px;
+      font-weight: 800;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+    }
+
+    .logo span {
+      color: var(--accent-1);
+    }
+
+    .nav-links {
+      display: flex;
+      list-style: none;
+      gap: 32px;
+      align-items: center;
+    }
+
+    .nav-links li a {
+      text-decoration: none;
+      color: var(--secondary-text);
+      font-size: 13px;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      transition: 0.3s;
+    }
+
+    .nav-links li a:hover, .nav-links li a.active {
+      color: var(--accent-1);
+    }
+
+    .menu-toggle {
+        display: none;
+        flex-direction: column;
+        gap: 6px;
+        cursor: pointer;
+        z-index: 1001;
+    }
+
+    .menu-toggle span {
+        width: 30px;
+        height: 2px;
+        background: var(--primary-text);
+        transition: 0.3s;
+    }
+
+    .layout-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 80px;
+      align-items: center;
+    }
+
+    .cap-strip {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 16px;
+      margin-top: 40px;
+    }
+
+    .cap-item {
+      padding: 24px 32px;
+      background: var(--bg-soft);
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      display: flex;
+      align-items: center;
+      gap: 24px;
+      transition: 0.3s;
+    }
+
+    .cap-num {
+      font-size: 24px;
+      font-weight: 800;
+      color: var(--accent-1);
+    }
+
+    .cap-item h4 {
+      font-size: 18px;
+      margin-bottom: 4px;
+    }
+
+    .stats-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 40px;
+      margin-bottom: 40px;
+    }
+
+    .stat-card {
+      border-left: 2px solid var(--accent-1);
+      padding-left: 24px;
+    }
+
+    .stat-n {
+      font-size: 48px;
+      font-weight: 800;
+      display: block;
+      margin-bottom: 8px;
+    }
+
+    .stat-l {
+      font-size: 13px;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      color: var(--secondary-text);
+    }
+
+    .services {
+      background: var(--bg-soft);
+    }
+
+    footer {
+      border-top: 1px solid var(--border);
+      padding-top: 80px;
+      background: var(--bg-soft);
+      padding-bottom: 40px;
+    }
+
+    .foot-grid {
+      display: grid;
+      grid-template-columns: 2fr 1fr 1fr 2fr;
+      gap: 40px;
+      margin-bottom: 60px;
+    }
+
+    .foot-col h5 {
+      font-size: 12px;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      margin-bottom: 24px;
+      color: var(--accent-1);
+    }
+
+    .foot-col ul {
+      list-style: none;
+    }
+
+    .foot-col ul li {
+      margin-bottom: 12px;
+    }
+
+    .foot-col ul li a {
+      text-decoration: none;
+      color: var(--secondary-text);
+      font-size: 13px;
+      transition: 0.3s;
+    }
+
+    .f-bottom {
+      border-top: 1px solid var(--border);
+      padding-top: 32px;
+      display: flex;
+      justify-content: space-between;
+      font-size: 12px;
+      color: var(--secondary-text);
+    }
+
+    @media (max-width: 1024px) {
+      .layout-grid {
+        grid-template-columns: 1fr;
+        gap: 40px;
+        text-align: center;
+      }
+      .nav-links {
+          position: fixed;
+          top: 0; right: -100%;
+          width: 80%; height: 100vh;
+          background: rgba(255,255,255,0.98);
+          flex-direction: column;
+          justify-content: center;
+          transition: 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+          border-left: 1px solid var(--border);
+          backdrop-filter: blur(20px);
+      }
+      .nav-links.active { right: 0; }
+      .menu-toggle { display: flex; }
+      .foot-grid { grid-template-columns: 1fr 1fr; }
+    }
+  </style>
+</head>
+
+<body>
+
+  <nav class="navbar" id="navbar">
+    <div class="container">
+      <div class="logo">KEI<span>N</span>EN</div>
+      <ul class="nav-links" id="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html" class="active">About</a></li>
+        <li><a href="services.html">Services</a></li>
+        <li><a href="innovation.html">Innovation</a></li>
+        <li><a href="industries.html">Industries</a></li>
+        <li><a href="contact.html">Contact</a></li>
+        <li><a href="contact.html" class="btn-s" style="padding: 10px 20px; font-size: 11px; margin-left: 10px; border-color: var(--accent-1); color: var(--accent-1);">Talk to an Architect</a></li>
+      </ul>
+      <div class="menu-toggle" id="menu-toggle">
+          <span></span>
+          <span></span>
+          <span></span>
+      </div>
+    </div>
+  </nav>
+
+  <section style="padding-top: 180px; background: var(--bg-soft);">
+    <div class="container">
+        <span class="eyebrow">About Keinen</span>
+        <h1 class="h2-main">Architecting the <br><span class="text-gradient">Intelligent Enterprise.</span></h1>
+        <p style="font-size: 20px; max-width: 800px; color: var(--primary-text);">We are more than a technology provider. We are your digital transformation partner, dedicated to closing the gap between complex technology and operational excellence.</p>
+    </div>
+  </section>
+
+  <section id="who-we-are">
+    <div class="container layout-grid">
+      <div>
+        <span class="eyebrow">Our Identity</span>
+        <h2 class="h2-main">"When technology is invisible, your people are unstoppable."</h2>
+        <p style="font-size: 18px; color: var(--primary-text);">Keinen is a team of multi-domain architects who treat IT, OT, Security, and Operations as one interconnected system.</p>
+
+        <div class="stats-grid" style="margin-top: 60px;">
+          <div class="stat-card"><span class="stat-n">99.995%</span><span class="stat-l">Data Center Uptime SLA</span></div>
+          <div class="stat-card"><span class="stat-n">9</span><span class="stat-l">Global Frameworks Applied</span></div>
+          <div class="stat-card"><span class="stat-n">7</span><span class="stat-l">Integrated Capability Pillars</span></div>
+        </div>
+      </div>
+      <div>
+        <div class="cap-strip">
+          <div class="cap-item">
+            <div class="cap-num">01</div>
+            <div>
+              <h4>Enterprise Networks</h4>
+              <p>Resilient connectivity at every layer.</p>
+            </div>
+          </div>
+          <div class="cap-item">
+            <div class="cap-num">02</div>
+            <div>
+              <h4>OT & Automation</h4>
+              <p>Connected operations that predict, optimize, and produce.</p>
+            </div>
+          </div>
+          <div class="cap-item">
+            <div class="cap-num">03</div>
+            <div>
+              <h4>Cybersecurity</h4>
+              <p>Zero-trust protection for critical systems and data.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="services">
+    <div class="container">
+      <div style="max-width: 800px; margin: 0 auto; text-align: center; margin-bottom: 80px;">
+        <span class="eyebrow">The Keinen Philosophy</span>
+        <h2 class="h2-main">Built to Build What Others Cannot.</h2>
+        <p>We think in ecosystems — every challenge is viewed as a complete picture. Engineers are trained across IT, OT, cybersecurity, data center, video, and collaboration. No silos, no hand-offs.</p>
+        <p style="font-size: 20px; font-weight: 700; color: var(--primary-text); font-style: italic;">"Technology should be the silent engine of your success — not the loudest problem in your boardroom."</p>
+      </div>
+
+        <div class="layout-grid">
+            <div>
+                <h3 class="h3-main">Mission, Vision & Values</h3>
+                <div style="background: var(--bg-deep); padding: 40px; border-radius: 24px; border: 1px solid var(--border); margin-bottom: 24px;">
+                    <h4 style="color:var(--accent-1); margin-bottom:8px;">Mission</h4>
+                    <p style="margin-bottom:24px;">Eliminate the gap between technology potential and operational reality.</p>
+                    <h4 style="color:var(--accent-1); margin-bottom:8px;">Vision</h4>
+                    <p style="margin-bottom:0;">Every enterprise on infrastructure so intelligent it becomes the most invisible, most powerful force in their business.</p>
+                </div>
+            </div>
+            
+            <div class="reveal">
+                <img src="https://images.openai.com/static-rsc-4/vUnEe1xbLw8UFRY933OL7POUcUF7B19pAHVIAY-U6HvQTgbPVgdxLyO4XZ12-cLxje1IIa9GCQgTx9MYybUQz1Z62m5_4FZ2QVfj5ORFYku9XAwEAzclsrf3Cit-ZJDqwJo6g2iJ3j3Rc-KSAQVxL968DfxFW0fjiZlaq5dXR5jminUKyIyVjsH3mJxH1fVG?purpose=fullsize" alt="About Keinen" style="width: 100%; border-radius: 24px; box-shadow: 0 20px 40px rgba(0,0,0,0.5);">
+            </div>
+        </div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="container">
+      <div class="foot-grid">
+        <div class="foot-col">
+          <div class="logo" style="margin-bottom: 24px;">KEI<span>N</span>EN</div>
+          <p style="font-size: 14px;">Keinen Techne Solutions Pvt. Ltd.<br>We architect integrated digital ecosystems for enterprises to perform at full potential.</p>
+        </div>
+        <div class="foot-col">
+          <h5>Quick Links</h5>
+          <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About Us</a></li>
+            <li><a href="services.html">Services</a></li>
+            <li><a href="industries.html">Industries</a></li>
+            <li><a href="contact.html">Contact</a></li>
+          </ul>
+        </div>
+        <div class="foot-col">
+          <h5>Frameworks</h5>
+          <ul>
+            <li><a href="#">ISA-95</a></li>
+            <li><a href="#">IEC 62443</a></li>
+            <li><a href="#">TOGAF</a></li>
+            <li><a href="#">TIA-942</a></li>
+          </ul>
+        </div>
+        <div class="foot-col">
+          <h5>Contact</h5>
+          <p style="font-size: 13px; color: var(--secondary-text);">📞 +91 80415 01718<br>✉️ info@keinen.in<br>📍 Bengaluru, India</p>
+        </div>
+      </div>
+      <div class="f-bottom">
+        <div>&copy; 2025 Keinen Techne Solutions Private Limited.</div>
+        <div style="display: flex; gap: 24px;">
+          <a href="#" style="color: var(--secondary-text); text-decoration: none;">Privacy Policy</a>
+          <a href="#" style="color: var(--secondary-text); text-decoration: none;">Terms of Use</a>
+          <a href="#" style="color: var(--secondary-text); text-decoration: none;">LinkedIn</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => { if (entry.isIntersecting) entry.target.classList.add('active'); });
+    }, { threshold: 0.1 });
+    document.querySelectorAll('.reveal, .cap-item, .stat-card').forEach(el => observer.observe(el));
+    
+    window.addEventListener('scroll', () => {
+      const nav = document.getElementById('navbar');
+      if (window.scrollY > 50) nav.classList.add('scrolled');
+      else nav.classList.remove('scrolled');
+    });
+
+    const menuToggle = document.getElementById('menu-toggle');
+    const navLinks = document.getElementById('nav-links');
+    menuToggle.addEventListener('click', () => {
+        menuToggle.classList.toggle('active');
+        navLinks.classList.toggle('active');
+    });
+  </script>
+</body>
+</html>

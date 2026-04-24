@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Services | Keinen Techne</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap"
+    rel="stylesheet">
+  <style>
+    :root {
+      --bg-deep: #FFFFFF;
+      --bg-soft: #F5F5F5;
+      --primary-text: #212121;
+      --secondary-text: #9E9E9E;
+      --accent-1: #E53935;
+      --accent-2: #C62828;
+      --accent-3: #B71C1C;
+      --glass: rgba(0, 0, 0, 0.03);
+      --border: rgba(0, 0, 0, 0.08);
+      --gradient: linear-gradient(135deg, var(--accent-1), var(--accent-2));
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      background-color: var(--bg-deep);
+      color: var(--primary-text);
+      line-height: 1.6;
+    }
+
+    .container {
+      max-width: 1440px;
+      margin: 0 auto;
+      padding: 0 40px;
+    }
+
+    section {
+      padding: 100px 0;
+    }
+
+    .eyebrow {
+      font-size: 11px;
+      font-weight: 800;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      color: var(--accent-1);
+      margin-bottom: 24px;
+      display: block;
+    }
+
+    .h2-main {
+      font-size: clamp(36px, 4vw, 56px);
+      font-weight: 800;
+      margin-bottom: 32px;
+      line-height: 1.1;
+    }
+
+    .text-gradient {
+      background: linear-gradient(90deg, var(--accent-1), var(--accent-2), var(--accent-1));
+      background-size: 200% auto;
+      -webkit-background-clip: text;
+      background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    .navbar {
+      position: fixed;
+      top: 0; left: 0; width: 100%; height: 90px;
+      display: flex; align-items: center; z-index: 1000;
+      background: rgba(255, 255, 255, 0.8);
+      backdrop-filter: blur(20px);
+      border-bottom: 1px solid var(--border);
+    }
+
+    .navbar .container { display: flex; justify-content: space-between; align-items: center; width: 100%; }
+    .logo { font-size: 24px; font-weight: 800; letter-spacing: 2px; text-transform: uppercase; }
+    .logo span { color: var(--accent-1); }
+    .nav-links { display: flex; list-style: none; gap: 32px; align-items: center; }
+    .nav-links li a { text-decoration: none; color: var(--secondary-text); font-size: 13px; font-weight: 600; text-transform: uppercase; transition: 0.3s; }
+    .nav-links li a:hover, .nav-links li a.active { color: var(--accent-1); }
+
+    .pill-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+      gap: 32px;
+    }
+
+    .pill-card {
+      background: var(--bg-soft);
+      border: 1px solid var(--border);
+      padding: 48px;
+      border-radius: 32px;
+      transition: 0.4s;
+    }
+
+    .pill-card:hover {
+      border-color: var(--accent-1);
+      transform: translateY(-5px);
+      background: white;
+      box-shadow: 0 20px 40px rgba(0,0,0,0.05);
+    }
+
+    .pill-card h3 { font-size: 24px; font-weight: 800; margin-bottom: 12px; }
+    .pill-card .tagline { color: var(--primary-text); font-weight: 600; margin-bottom: 24px; }
+    .pill-card ul { list-style: none; margin-bottom: 32px; }
+    .pill-card ul li { position: relative; padding-left: 20px; font-size: 14px; color: var(--secondary-text); margin-bottom: 12px; }
+    .pill-card ul li::before { content: '→'; position: absolute; left: 0; color: var(--accent-1); }
+
+    footer { border-top: 1px solid var(--border); padding: 80px 0 40px; background: var(--bg-soft); }
+    .foot-grid { display: grid; grid-template-columns: 2fr 1fr 1fr 2fr; gap: 40px; margin-bottom: 60px; }
+    .f-bottom { border-top: 1px solid var(--border); padding-top: 32px; display: flex; justify-content: space-between; font-size: 12px; color: var(--secondary-text); }
+  </style>
+</head>
+
+<body>
+  <nav class="navbar">
+    <div class="container">
+      <div class="logo">KEI<span>N</span>EN</div>
+      <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="services.html" class="active">Services</a></li>
+        <li><a href="innovation.html">Innovation</a></li>
+        <li><a href="industries.html">Industries</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <section style="padding-top: 180px;">
+    <div class="container">
+      <span class="eyebrow">Our Disciplines</span>
+      <h1 class="h2-main">Seven Pillars of <br><span class="text-gradient">Integrated Excellence.</span></h1>
+      <p style="font-size: 20px; max-width: 800px;">We don't just provide services; we build integrated ecosystems where every component works in harmony to drive your enterprise forward.</p>
+    </div>
+  </section>
+
+  <section style="background: var(--bg-soft);">
+    <div class="container">
+      <div class="pill-grid">
+        <div class="pill-card">
+          <div class="eyebrow">01</div>
+          <h3>Enterprise Networks</h3>
+          <p class="tagline">The foundation everything else depends on.</p>
+          <ul>
+            <li>Enterprise-grade networks — zero-compromise performance</li>
+            <li>SD-WAN: multi-site centralised control</li>
+            <li>Unified Communications connecting teams anywhere</li>
+            <li>Full lifecycle: procurement to managed support</li>
+          </ul>
+        </div>
+        <div class="pill-card">
+          <div class="eyebrow">02</div>
+          <h3>OT & Automation</h3>
+          <p class="tagline">Your operations, made intelligent.</p>
+          <ul>
+            <li>SCADA/HMI design, integration, and commissioning</li>
+            <li>PLC and DCS programming, lifecycle management</li>
+            <li>MES integration bridging shop-floor to enterprise ERP</li>
+            <li>Predictive maintenance architectures</li>
+          </ul>
+        </div>
+        <div class="pill-card">
+          <div class="eyebrow">03</div>
+          <h3>Cybersecurity</h3>
+          <p class="tagline">Security designed to protect what matters most.</p>
+          <ul>
+            <li>IT/OT assessments aligned to IEC 62443, NIST CSF</li>
+            <li>Zero Trust Network Access (ZTNA) solutions</li>
+            <li>OT security: network segmentation, DMZ design</li>
+            <li>Incident response, threat modelling, SOC integration</li>
+          </ul>
+        </div>
+        <div class="pill-card">
+          <div class="eyebrow">04</div>
+          <h3>Data Center Design</h3>
+          <p class="tagline">Infrastructure engineered to never fail.</p>
+          <ul>
+            <li>TIA-942 compliant design: Tier I–IV builds</li>
+            <li>High-efficiency cooling and containment</li>
+            <li>Power architecture: UPS, N+1/2N redundancy</li>
+            <li>DCIM implementation for real-time monitoring</li>
+          </ul>
+        </div>
+        <div class="pill-card">
+          <div class="eyebrow">05</div>
+          <h3>Intelligent Video</h3>
+          <p class="tagline">See everything. Miss nothing.</p>
+          <ul>
+            <li>Enterprise CCTV and IP surveillance design</li>
+            <li>AI video analytics: anomaly & crowd analysis</li>
+            <li>Access control: unified physical security management</li>
+          </ul>
+        </div>
+        <div class="pill-card">
+          <div class="eyebrow">06</div>
+          <h3>AV & Collaboration</h3>
+          <p class="tagline">Workplaces built for modern collaboration.</p>
+          <ul>
+            <li>Modern meeting room design & AV integration</li>
+            <li>Microsoft Teams Rooms, Cisco Webex integration</li>
+            <li>Digital signage & production dashboards</li>
+          </ul>
+        </div>
+        <div class="pill-card">
+          <div class="eyebrow">07</div>
+          <h3>Digital Transformation</h3>
+          <p class="tagline">Architectured. Delivered. Sustained.</p>
+          <ul>
+            <li>SIRI assessments: 16-dimension maturity evaluation</li>
+            <li>TOGAF-aligned enterprise architecture methodologies</li>
+            <li>Industry X.0 roadmap blueprints</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="container">
+      <div class="foot-grid">
+        <div class="foot-col">
+          <div class="logo">KEI<span>N</span>EN</div>
+          <p style="font-size: 14px; margin-top: 20px;">Keinen Techne Solutions Pvt. Ltd.<br>Bengaluru, India</p>
+        </div>
+        <div class="foot-col">
+          <h5>Links</h5>
+          <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="services.html">Services</a></li>
+            <li><a href="contact.html">Contact</a></li>
+          </ul>
+        </div>
+        <div class="foot-col">
+          <h5>Solutions</h5>
+          <ul>
+            <li><a href="#">Networks</a></li>
+            <li><a href="#">Automation</a></li>
+            <li><a href="#">Security</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="f-bottom">
+        <div>&copy; 2025 Keinen Techne.</div>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>

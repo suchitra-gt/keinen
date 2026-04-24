@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Innovation Lab | Keinen Techne</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap"
+    rel="stylesheet">
+  <style>
+    :root {
+      --bg-deep: #FFFFFF;
+      --bg-soft: #F5F5F5;
+      --primary-text: #212121;
+      --secondary-text: #9E9E9E;
+      --accent-1: #E53935;
+      --accent-2: #C62828;
+      --accent-3: #B71C1C;
+      --border: rgba(0, 0, 0, 0.08);
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body { font-family: 'Plus Jakarta Sans', sans-serif; background-color: var(--bg-deep); color: var(--primary-text); line-height: 1.6; }
+    .container { max-width: 1440px; margin: 0 auto; padding: 0 40px; }
+    section { padding: 100px 0; }
+    .eyebrow { font-size: 11px; font-weight: 800; letter-spacing: 3px; text-transform: uppercase; color: var(--accent-1); margin-bottom: 24px; display: block; }
+    .h2-main { font-size: clamp(36px, 4vw, 56px); font-weight: 800; margin-bottom: 32px; line-height: 1.1; }
+    .text-gradient { background: linear-gradient(90deg, var(--accent-1), var(--accent-2), var(--accent-1)); background-size: 200% auto; -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent; }
+    
+    .navbar { position: fixed; top: 0; left: 0; width: 100%; height: 90px; display: flex; align-items: center; z-index: 1000; background: rgba(255, 255, 255, 0.8); backdrop-filter: blur(20px); border-bottom: 1px solid var(--border); }
+    .navbar .container { display: flex; justify-content: space-between; align-items: center; width: 100%; }
+    .logo { font-size: 24px; font-weight: 800; letter-spacing: 2px; text-transform: uppercase; }
+    .logo span { color: var(--accent-1); }
+    .nav-links { display: flex; list-style: none; gap: 32px; align-items: center; }
+    .nav-links li a { text-decoration: none; color: var(--secondary-text); font-size: 13px; font-weight: 600; text-transform: uppercase; transition: 0.3s; }
+    .nav-links li a:hover, .nav-links li a.active { color: var(--accent-1); }
+
+    .layout-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 80px; align-items: center; }
+    .process-steps { display: grid; gap: 32px; margin-top: 40px; }
+    .process-step { display: flex; gap: 24px; }
+    .step-num { font-size: 24px; font-weight: 800; color: var(--accent-1); }
+
+    footer { border-top: 1px solid var(--border); padding: 80px 0 40px; background: var(--bg-soft); }
+  </style>
+</head>
+
+<body>
+  <nav class="navbar">
+    <div class="container">
+      <div class="logo">KEI<span>N</span>EN</div>
+      <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="services.html">Services</a></li>
+        <li><a href="innovation.html" class="active">Innovation</a></li>
+        <li><a href="industries.html">Industries</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <section style="padding-top: 180px; background: #050505; color: white;">
+    <div class="container layout-grid">
+      <div>
+        <span class="eyebrow">Excellence Hub</span>
+        <h1 class="h2-main">The Keinen <br><span class="text-gradient">Innovation Lab.</span></h1>
+        <p style="font-size: 18px; color: #ccc;">Where theoretical frameworks meet industrial stress-testing.</p>
+        <p style="color: #888;">Our Innovation Lab isn't just for show. It's an active environment where we prototype IT-OT bridging solutions, perform SIRI readiness audits, and simulate zero-trust security failures.</p>
+        
+        <div class="process-steps">
+          <div class="process-step">
+            <div class="step-num">01</div>
+            <div>
+              <h4 style="font-size: 20px; color: white; margin-bottom: 8px;">SIRI Maturity Assessments</h4>
+              <p style="color: #888;">The global standard for Industry 4.0. We use the 16-dimension framework to give your board a scientific transformation roadmap.</p>
+            </div>
+          </div>
+          <div class="process-step">
+            <div class="step-num">02</div>
+            <div>
+              <h4 style="font-size: 20px; color: white; margin-bottom: 8px;">AI-OT Optimization</h4>
+              <p style="color: #888;">Beyond standard analytics. We train custom models on edge operational data to predict failures and self-optimize production loops.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div>
+        <div style="background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.1); border-radius: 40px; padding: 60px; text-align: center; position: relative; overflow: hidden;">
+           <img src="https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?auto=format&fit=crop&q=80&w=1200" alt="Innovation Lab" style="position: absolute; top:0; left:0; width:100%; height:100%; object-fit: cover; opacity: 0.2;">
+           <div style="position: relative; z-index: 2;">
+             <h3 style="font-size: 32px; font-weight: 800; margin-bottom: 20px;">Prototype. <br>Validate. <br>Scale.</h3>
+             <p style="color: white; font-weight: 600;">"We don't beta-test on your production floor."</p>
+           </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="container">
+      <div style="text-align: center; color: var(--secondary-text);">
+        <p>&copy; 2025 Keinen Techne. All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>
