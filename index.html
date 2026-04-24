@@ -11,16 +11,18 @@
     rel="stylesheet">
   <style>
     :root {
-      --bg-deep: #FFFFFF;
-      --bg-soft: #F5F5F5;
-      --primary-text: #212121;
-      --secondary-text: #9E9E9E;
-      --accent-1: #E53935;
-      --accent-2: #C62828;
+      --bg-deep: #050505;
+      --bg-soft: #0A0A0A;
+      --primary-text: #FFFFFF;
+      --secondary-text: #A0A0A0;
+      --accent-1: #FF3B3B;
+      --accent-2: #D32F2F;
       --accent-3: #B71C1C;
-      --glass: rgba(0, 0, 0, 0.03);
-      --border: rgba(0, 0, 0, 0.08);
+      --glass: rgba(255, 255, 255, 0.03);
+      --border: rgba(255, 255, 255, 0.08);
       --gradient: linear-gradient(135deg, var(--accent-1), var(--accent-2));
+      --mesh-gradient: radial-gradient(at 0% 0%, rgba(255, 59, 59, 0.15) 0, transparent 50%), 
+                       radial-gradient(at 100% 100%, rgba(211, 47, 47, 0.1) 0, transparent 50%);
     }
 
     * {
@@ -915,19 +917,76 @@
 
   <!-- 01 HOME HERO -->
   <section class="hero">
-    <div class="container hero-layout">
+    <video autoplay muted loop playsinline class="hero-video">
+        <source src="https://assets.mixkit.co/videos/preview/mixkit-digital-circuit-board-loop-442-large.mp4" type="video/mp4">
+    </video>
+    <div class="mesh-overlay"></div>
+    <div class="container hero-layout" style="position: relative; z-index: 2;">
       <div class="hero-content">
-        <h1 class="reveal">Where Intelligence <br><span class="text-gradient">Meets Infrastructure.</span></h1>
-        <p class="reveal" style="font-size: 20px; font-weight: 500; color: var(--primary-text);">We design and deploy integrated IT,
-          OT, security, and automation ecosystems that don't just connect your enterprise — they make it intelligent.
-        </p>
-        <p class="reveal">From factory floors to boardrooms, Keinen architects digital environments built on globally
-          proven frameworks — designed to anticipate failure, self-optimize, and scale.</p>
+        <h1 class="reveal">Architecting the <br><span class="text-gradient">Intelligent Future.</span></h1>
+        <p class="reveal" style="font-size: 20px; font-weight: 500; color: white;">Keinen Corp bridges the gap between silicon and strategy. High-performance IT/OT ecosystems designed for the speed of now.</p>
+        <p class="reveal" style="color: var(--secondary-text);">We bridge the gap between silicon and strategy. High-performance IT/OT ecosystems designed for the speed of now.</p>
         <div class="hero-btns reveal">
-          <a href="#services" class="btn-p">Discover Our Solutions &rarr;</a>
-          <a href="#contact" class="btn-s">Talk to an Architect</a>
+          <a href="services.html" class="btn-p">Explore Ecosystems &rarr;</a>
+          <a href="about.html" class="btn-s" style="color: white !important; border-color: rgba(255,255,255,0.2);">Our Philosophy</a>
         </div>
       </div>
+    </div>
+  </section>
+
+  <style>
+    .hero {
+        height: 100vh;
+        position: relative;
+        overflow: hidden;
+        display: flex;
+        align-items: center;
+        background: black;
+    }
+    .hero-video {
+        position: absolute;
+        top: 50%; left: 50%;
+        min-width: 100%; min-height: 100%;
+        width: auto; height: auto;
+        transform: translate(-50%, -50%);
+        z-index: 0;
+        opacity: 0.4;
+        filter: grayscale(0.5) contrast(1.2);
+    }
+    .mesh-overlay {
+        position: absolute;
+        top: 0; left: 0; width: 100%; height: 100%;
+        background: var(--mesh-gradient);
+        z-index: 1;
+        pointer-events: none;
+    }
+    .hero::after {
+        content: '';
+        position: absolute;
+        bottom: 0; left: 0; width: 100%; height: 300px;
+        background: linear-gradient(to top, var(--bg-deep), transparent);
+        z-index: 1;
+    }
+    .navbar {
+        background: rgba(5, 5, 5, 0.5) !important;
+        border-bottom: 1px solid rgba(255,255,255,0.05) !important;
+    }
+    .navbar.scrolled {
+        background: rgba(5, 5, 5, 0.95) !important;
+    }
+    .logo { color: white !important; }
+    .pill-card, .ind-card {
+        background: rgba(255,255,255,0.02) !important;
+        border-color: rgba(255,255,255,0.05) !important;
+    }
+    .pill-card:hover {
+        background: rgba(255,255,255,0.05) !important;
+        border-color: var(--accent-1) !important;
+    }
+    body { background: var(--bg-deep); color: white; }
+    p { color: var(--secondary-text); }
+    .eyebrow { color: var(--accent-1) !important; }
+  </style>
       <div class="hero-visual reveal">
         <div class="floating-elements">
             <div class="float-item" style="width: 100px; height: 100px; top: 10%; left: 5%; animation-delay: 0s;"></div>
