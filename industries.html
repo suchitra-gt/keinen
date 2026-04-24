@@ -97,7 +97,7 @@
     .pill-card { background: var(--glass) !important; backdrop-filter: blur(20px); border: 1px solid var(--border) !important; border-radius: 40px; transition: 0.5s cubic-bezier(0.2, 0.8, 0.2, 1); }
     .pill-card:hover { transform: translateY(-20px) scale(1.02); border-color: var(--accent-1) !important; box-shadow: 0 40px 100px rgba(183, 28, 28, 0.1); }
     
-    section::before { content: ''; position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: radial-gradient(circle at var(--mouse-x, 50%) var(--mouse-y, 50%), rgba(183, 28, 28, 0.05), transparent 40%); z-index: 0; pointer-events: none; }
+    section::before { content: ''; position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: radial-gradient(circle at var(--mouse-x, 50%) var(--mouse-y, 50%), rgba(183, 28, 28, 0.05), transparent 40%); z-index: -1; pointer-events: none; }
     .pill-card::after, .ind-card::after { content: ''; position: absolute; inset: -2px; background: linear-gradient(90deg, transparent, var(--accent-1), transparent); background-size: 200% 100%; z-index: -1; border-radius: inherit; opacity: 0; transition: 0.5s; }
     .pill-card:hover::after, .ind-card:hover::after { opacity: 0.5; animation: borderShimmer 2s linear infinite; }
     @keyframes borderShimmer { 0% { background-position: -200% 0; } 100% { background-position: 200% 0; } }
@@ -194,6 +194,7 @@
   </script>
 </body>
 </html>
+
 
 
 
