@@ -12,17 +12,15 @@
   <style>
     :root {
       --bg-deep: #FFFFFF;
-      --bg-soft: #F5F5F5;
-      --primary-text: #212121;
-      --secondary-text: #9E9E9E;
+      --bg-soft: #F8F8F8;
+      --primary-text: #0F0F0F;
+      --secondary-text: #666666;
       --accent-1: #B71C1C;
       --accent-2: #7F0000;
-      --accent-3: #4B0000;
-      --glass: rgba(183, 28, 28, 0.05);
-      --border: rgba(183, 28, 28, 0.15);
-      --gradient: linear-gradient(135deg, var(--accent-1), var(--accent-2));
-      --mesh-gradient: radial-gradient(at 0% 0%, rgba(183, 28, 28, 0.3) 0, transparent 60%), 
-                       radial-gradient(at 100% 100%, rgba(127, 0, 0, 0.25) 0, transparent 60%);
+      --border: rgba(183, 28, 28, 0.12);
+      --glass: rgba(255, 255, 255, 0.7);
+      --mesh-gradient: radial-gradient(at 0% 0%, rgba(183, 28, 28, 0.12) 0, transparent 50%), 
+                       radial-gradient(at 100% 100%, rgba(127, 0, 0, 0.1) 0, transparent 50%);
     }
 
     * {
@@ -138,28 +136,56 @@
       margin-bottom: 20px;
     }
 
+    /* CUSTOM CURSOR */
+    .cursor-follower {
+      position: fixed;
+      width: 40px;
+      height: 40px;
+      background: rgba(183, 28, 28, 0.1);
+      border: 1px solid var(--accent-1);
+      border-radius: 50%;
+      pointer-events: none;
+      z-index: 10000;
+      transition: transform 0.1s ease-out, width 0.3s, height 0.3s, background 0.3s;
+      transform: translate(-50%, -50%);
+    }
+    
+    .cursor-follower.active {
+      width: 80px;
+      height: 80px;
+      background: rgba(183, 28, 28, 0.2);
+    }
+
+    .h1-main {
+      font-size: clamp(60px, 10vw, 120px);
+      font-weight: 900;
+      line-height: 0.85;
+      letter-spacing: -6px;
+      margin-bottom: 40px;
+    }
+
     .text-gradient {
-      background: linear-gradient(90deg, var(--accent-1), #D32F2F, var(--accent-1));
+      background: linear-gradient(90deg, var(--accent-1), #FF5252, var(--accent-1));
       background-size: 200% auto;
       -webkit-background-clip: text;
       background-clip: text;
       -webkit-text-fill-color: transparent;
       animation: shine 1.5s linear infinite;
-      font-weight: 800;
     }
 
-    @keyframes shine {
-      to { background-position: 200% center; }
+    .pill-card {
+      background: var(--glass) !important;
+      backdrop-filter: blur(20px);
+      border: 1px solid var(--border) !important;
+      padding: 60px 40px;
+      border-radius: 40px;
+      transition: 0.5s cubic-bezier(0.2, 0.8, 0.2, 1);
     }
 
-    .reveal {
-      opacity: 0;
-      transform: translateY(40px);
-      transition: opacity 1s cubic-bezier(0.2, 0.8, 0.2, 1), transform 1s cubic-bezier(0.2, 0.8, 0.2, 1);
-    }
-    .reveal.active {
-      opacity: 1;
-      transform: translateY(0);
+    .pill-card:hover {
+      transform: translateY(-20px) scale(1.02);
+      border-color: var(--accent-1) !important;
+      box-shadow: 0 40px 100px rgba(183, 28, 28, 0.1);
     }
 
     /* DELAYS */
@@ -916,6 +942,7 @@
 </head>
 
 <body>
+  <div class="cursor-follower" id="cursor"></div>
   <div class="bg-animation"></div>
   <div class="mesh-bg"></div>
 
@@ -1852,8 +1879,30 @@
         });
     });
 
-    // WhatsApp button hover effect handled by CSS
+    // Custom Cursor Logic
+    const cursor = document.getElementById('cursor');
+    document.addEventListener('mousemove', (e) => {
+      cursor.style.left = e.clientX + 'px';
+      cursor.style.top = e.clientY + 'px';
+    });
 
+    document.querySelectorAll('a, button, .pill-card').forEach(el => {
+      el.addEventListener('mouseenter', () => cursor.classList.add('active'));
+      el.addEventListener('mouseleave', () => cursor.classList.remove('active'));
+    });
+
+    // Magnetic Button Logic
+    document.querySelectorAll('.btn-p').forEach(btn => {
+      btn.addEventListener('mousemove', (e) => {
+        const rect = btn.getBoundingClientRect();
+        const x = e.clientX - rect.left - rect.width / 2;
+        const y = e.clientY - rect.top - rect.height / 2;
+        btn.style.transform = `translate(${x * 0.3}px, ${y * 0.3}px)`;
+      });
+      btn.addEventListener('mouseleave', () => {
+        btn.style.transform = `translate(0, 0)`;
+      });
+    });
   </script>
 </body>
 
