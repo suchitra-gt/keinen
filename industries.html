@@ -10,9 +10,6 @@
   <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap"
     rel="stylesheet">
   <style>
-    
-    
-    
     :root {
       --bg-deep: #FFFFFF;
       --bg-soft: #F5F5F5;
@@ -24,55 +21,34 @@
       --mesh-gradient: radial-gradient(at 0% 0%, rgba(183, 28, 28, 0.2) 0, transparent 50%), 
                        radial-gradient(at 100% 100%, rgba(127, 0, 0, 0.15) 0, transparent 50%);
     }
-    body { background-color: var(--bg-deep); color: var(--primary-text); }
-    .navbar { background: rgba(255, 255, 255, 0.8); backdrop-filter: blur(20px); border-bottom: 2px solid var(--border); }
-    .logo { color: var(--primary-text) !important; }
-    .h2-main { color: var(--primary-text); letter-spacing: -3px; }
-    .pill-card, .ind-card, .contact-box { background: var(--bg-soft) !important; border: 2px solid var(--border) !important; }
-    p { color: var(--secondary-text); }
-    footer { background: var(--bg-soft); }
-    body { background-color: var(--bg-deep); color: var(--primary-text); }
-    .navbar { background: rgba(255, 255, 255, 0.8); backdrop-filter: blur(20px); border-bottom: 1px solid var(--border); }
-    .logo { color: var(--primary-text) !important; }
-    .h2-main { color: var(--primary-text); }
-    .pill-card, .ind-card, .contact-box { background: var(--bg-soft) !important; border-color: var(--border) !important; }
-    p { color: var(--secondary-text); }
-    footer { background: var(--bg-soft); }
-    body { background-color: var(--bg-deep); color: white; }
-    .navbar { background: rgba(5, 5, 5, 0.5); backdrop-filter: blur(20px); border-bottom: 1px solid var(--border); }
-    .logo { color: white !important; }
-    .h2-main { color: white; letter-spacing: -3px; }
-    .pill-card, .ind-card, .contact-box { background: rgba(255,255,255,0.02) !important; border-color: var(--border) !important; }
-    p { color: var(--secondary-text); }
-    footer { background: var(--bg-deep); }
 
     * { box-sizing: border-box; margin: 0; padding: 0; }
-    body { font-family: 'Plus Jakarta Sans', sans-serif; background-color: var(--bg-deep); color: var(--primary-text); line-height: 1.6; }
+    body { font-family: 'Plus Jakarta Sans', sans-serif; background-color: var(--bg-deep); color: var(--primary-text); line-height: 1.6; overflow-x: hidden; }
     .container { max-width: 1440px; margin: 0 auto; padding: 0 40px; }
     section { padding: 100px 0; }
     .eyebrow { font-size: 11px; font-weight: 800; letter-spacing: 3px; text-transform: uppercase; color: var(--accent-1); margin-bottom: 24px; display: block; }
     .h2-main { font-size: clamp(36px, 4vw, 56px); font-weight: 800; margin-bottom: 32px; line-height: 1.1; }
-    .text-gradient { background: linear-gradient(90deg, var(--accent-1), var(--accent-2), var(--accent-1)); background-size: 200% auto; -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent; }
-    
-    .navbar { position: fixed; top: 0; left: 0; width: 100%; height: 90px; display: flex; align-items: center; z-index: 1000; background: rgba(255, 255, 255, 0.8); backdrop-filter: blur(20px); border-bottom: 1px solid var(--border); }
+    .text-gradient { background: linear-gradient(90deg, var(--accent-1), var(--accent-2), var(--accent-1)); background-size: 200% auto; -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent; animation: shine 1.5s linear infinite; }
+    @keyframes shine { to { background-position: 200% center; } }
+
+    .navbar { position: fixed; top: 0; left: 0; width: 100%; height: 90px; display: flex; align-items: center; z-index: 1000; background: rgba(255, 255, 255, 0.8); backdrop-filter: blur(20px); border-bottom: 2px solid var(--border); transition: 0.4s; }
     .navbar .container { display: flex; justify-content: space-between; align-items: center; width: 100%; }
-    .logo { font-size: 24px; font-weight: 800; letter-spacing: 2px; text-transform: uppercase; }
+    .logo { font-size: 24px; font-weight: 800; letter-spacing: 2px; text-transform: uppercase; color: var(--primary-text); text-decoration: none; }
     .logo span { color: var(--accent-1); }
     .nav-links { display: flex; list-style: none; gap: 32px; align-items: center; }
     .nav-links li a { text-decoration: none; color: var(--secondary-text); font-size: 13px; font-weight: 600; text-transform: uppercase; transition: 0.3s; }
     .nav-links li a:hover, .nav-links li a.active { color: var(--accent-1); }
 
-    .layout-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 80px; align-items: center; }
-    
-    .ind-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 24px; }
-    .ind-card { padding: 40px 32px; border: 1px solid var(--border); border-radius: 24px; background-size: cover; background-position: center; position: relative; overflow: hidden; min-height: 280px; display: flex; flex-direction: column; justify-content: flex-end; color: white; }
-    .ind-card::before { content: ''; position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: linear-gradient(to top, rgba(0,0,0,0.8), rgba(0,0,0,0.1)); z-index: 1; }
-    .ind-card h4 { font-size: 24px; font-weight: 800; position: relative; z-index: 2; margin-bottom: 12px; }
-    .ind-card p { font-size: 14px; position: relative; z-index: 2; color: #ccc; }
+    .ind-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(350px, 1fr)); gap: 30px; }
+    .ind-card { min-height: 400px; background-size: cover; background-position: center; display: flex; align-items: flex-end; position: relative; overflow: hidden; border-radius: 24px; border: 2px solid var(--border); transition: 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275); }
+    .ind-overlay { padding: 40px; width: 100%; background: linear-gradient(to top, rgba(0,0,0,0.95) 0%, rgba(0,0,0,0.4) 70%, transparent 100%); color: white !important; transition: 0.4s; }
+    .ind-overlay h4 { font-size: 24px; font-weight: 800; margin-bottom: 12px; color: white !important; }
+    .ind-overlay p { font-size: 14px; color: rgba(255,255,255,0.8) !important; margin-bottom: 0; }
+    .ind-card:hover { transform: translateY(-10px); }
+    .ind-card:hover .ind-overlay { background: linear-gradient(to top, var(--accent-1) 0%, rgba(0,0,0,0.7) 100%); }
 
-    footer { border-top: 1px solid var(--border); padding: 80px 0 40px; background: var(--bg-deep); }
-  
-    /* WHATSAPP FLOATING BUTTON */
+    footer { border-top: 1px solid var(--border); padding: 80px 0 40px; background: var(--bg-soft); }
+
     .whatsapp-btn {
         position: fixed;
         bottom: 30px;
@@ -90,22 +66,15 @@
         transition: 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
         text-decoration: none;
     }
-    .whatsapp-btn:hover {
-        transform: scale(1.1) rotate(10deg);
-        box-shadow: 0 15px 35px rgba(37, 211, 102, 0.5);
-    }
-    .whatsapp-btn svg {
-        width: 32px;
-        height: 32px;
-        fill: white;
-    }
-    </style>
+    .whatsapp-btn:hover { transform: scale(1.1) rotate(10deg); box-shadow: 0 15px 35px rgba(37, 211, 102, 0.5); }
+    .whatsapp-btn svg { width: 32px; height: 32px; fill: white; }
+  </style>
 </head>
 
 <body>
-  <nav class="navbar">
+  <nav class="navbar" id="navbar">
     <div class="container">
-      <div class="logo">KEI<span>N</span>EN</div>
+      <a href="index.html" class="logo">KEI<span>N</span>EN</a>
       <ul class="nav-links" id="nav-links">
         <li><a href="index.html">Home</a></li>
         <li><a href="about.html">About</a></li>
@@ -121,36 +90,48 @@
     <div class="container">
       <span class="eyebrow">Sector Expertise</span>
       <h1 class="h2-main">Precision for <br><span class="text-gradient">Mission-Critical Sectors.</span></h1>
-      <p style="font-size: 20px; max-width: 800px;">We design for environments where downtime isn't an option and precision is the only standard.</p>
+      <p style="font-size: 20px; max-width: 800px; color: var(--secondary-text);">We design for environments where downtime isn't an option and precision is the only standard.</p>
     </div>
   </section>
 
-  <section style="background: var(--bg-deep);">
+  <section>
     <div class="container">
       <div class="ind-grid">
-        <div class="ind-card" style="background-image: url('https://images.openai.com/static-rsc-4/Gi_qmzM8_9GA__4uyVmsadaLRA8AJH2ASW9IONbn7vw0pe0pnMoaSGPuj5lNKLNRSLQ_Vj1KXZmN4l94wcaOdlVBDINPgxX2iLpQpf3uXYUKt56GvmYQ0dBWWjs-NZ3Bpf0Ov-AUqB3FN6j5jGIjyEhOPKMceZd-LrZF6xuVk-m4GgH3jmdMF1DuxRL5auFo?purpose=fullsize');">
-          <h4>Manufacturing</h4>
-          <p>ISA-95 architectures, MES-SCADA integration, predictive maintenance.</p>
+        <div class="ind-card" style="background-image: url('https://images.unsplash.com/photo-1504384308090-c894fdcc538d?auto=format&fit=crop&q=80&w=800');">
+          <div class="ind-overlay">
+            <h4>Manufacturing</h4>
+            <p>ISA-95 architectures, MES-SCADA integration, predictive maintenance.</p>
+          </div>
         </div>
-        <div class="ind-card" style="background-image: url('https://images.openai.com/static-rsc-4/1HTmJFyuoSPVDDPwK5RAbPbft_MOYvrW6ylo9g-RFVJeeF-YhMpxvgNjtuuTtp8Km0Crkzu4LWSJJj0vL6B9ugOEimBbXBe5sE4NixeKOvHel0l2dzPzWo0JRBW864BSoI8g8gNfP-oMhBnmtrcDRsbLg4xlXQxhX3jA2k2cB9CLVMlUpqedYRMML7T7iqXY?purpose=fullsize');">
-          <h4>Oil & Gas</h4>
-          <p>ATEX certified automation. Remote monitoring for E&P.</p>
+        <div class="ind-card" style="background-image: url('https://images.unsplash.com/photo-1518709268805-4e9042af9f23?auto=format&fit=crop&q=80&w=800');">
+          <div class="ind-overlay">
+            <h4>Oil & Gas</h4>
+            <p>ATEX certified automation. Remote monitoring for E&P.</p>
+          </div>
         </div>
-        <div class="ind-card" style="background-image: url('https://images.openai.com/static-rsc-4/kYkC1lGmyhIKh5QJaKobIgT6ydI3YEy4ykhlFZtWFRFgk8xcPdNtP3im52LTniTTGlxEAmDob8UeD8XtFcL_Efv3dcCq6LOYPh3U8zLJRaomng07suC-ttdKI-yaA_oNeaV6rxISVyKqClu1HSvyRk7my-Au5PoY9PdjIaQ77mqsPvIJwjThnd5zZeOTGjSF?purpose=fullsize');">
-          <h4>Pharmaceuticals</h4>
-          <p>21 CFR Part 11 systems. GAMP 5 validated automation.</p>
+        <div class="ind-card" style="background-image: url('https://images.unsplash.com/photo-1587854692152-cbe660dbbb88?auto=format&fit=crop&q=80&w=800');">
+          <div class="ind-overlay">
+            <h4>Pharmaceuticals</h4>
+            <p>21 CFR Part 11 systems. GAMP 5 validated automation.</p>
+          </div>
         </div>
-        <div class="ind-card" style="background-image: url('https://images.openai.com/static-rsc-4/6Cak5Mu3BzMnjT-I59jQD0fFkERBQ6Eneq0rEZTLUxsZwXKeu2-hKRN0bxxtLNLBOHelSNW3aKqFSDRhytfGeJU1domq1oTWFv87MfocsafVdc9djPA-th22inJOuwD5reDaxSadyVJ4_QNgiUHLQdu4NuGRNkzr8ohp3d5ENoZriPQ3a5KY1VzwhCbYr65o?purpose=fullsize');">
-          <h4>Healthcare</h4>
-          <p>EMR integration. Medical device networking (IEC 80001).</p>
+        <div class="ind-card" style="background-image: url('https://images.unsplash.com/photo-1519494026892-80bbd2d6fd0d?auto=format&fit=crop&q=80&w=800');">
+          <div class="ind-overlay">
+            <h4>Healthcare</h4>
+            <p>EMR integration. Medical device networking (IEC 80001).</p>
+          </div>
         </div>
-        <div class="ind-card" style="background-image: url('https://images.openai.com/static-rsc-4/0Bb2Uqj6l3qBZ0BMYTj3w4itC-DgHhCTkOudregqcsbNug53O3ZmfjXqvxDKP_3kzTh3EpNStjfUCXgYoYPOdcBE6-5_75DMh-9oZE5LEA0GbiY6qO-yvRBqwZN37DtUG0yR77MDgUoel9DHoIoRP1VcyyphnbZK-EaJLeGpQm6yRRfEziEhIyERTaQk-NQD?purpose=fullsize');">
-          <h4>Banking & Finance</h4>
-          <p>Zero Trust network architecture. ISO 27001 compliance.</p>
+        <div class="ind-card" style="background-image: url('https://images.unsplash.com/photo-1558494949-ef010ca2132d?auto=format&fit=crop&q=80&w=800');">
+          <div class="ind-overlay">
+            <h4>Banking & Finance</h4>
+            <p>Zero Trust network architecture. ISO 27001 compliance.</p>
+          </div>
         </div>
-        <div class="ind-card" style="background-image: url('https://images.openai.com/static-rsc-4/wFMoZ0cdbF3IP4TMyWPj9a1aS9ljHOPNRc5B0d-abAP6-5updpxoZPxeEMjMi2hOvReB_DKY5-VsLIvUFJJ8DhZhNZUEL0wv2HVvGBnS2ryFD1gi9wsZUVSsKYZyQxA5cKQYK4I1-d7qgPcK5sfCVtPay99cxP5Lw4CXYlv-Uoip-8P13ybDneCRfvCcRgOA?purpose=fullsize');">
-          <h4>Education</h4>
-          <p>Connected campuses. AI-driven learning analytics platforms.</p>
+        <div class="ind-card" style="background-image: url('https://images.unsplash.com/photo-1556761175-b413da4baf72?auto=format&fit=crop&q=80&w=800');">
+          <div class="ind-overlay">
+            <h4>Technology</h4>
+            <p>Hyperscale data centers, AI infrastructure, and cloud ecosystem optimization.</p>
+          </div>
         </div>
       </div>
     </div>
@@ -163,14 +144,18 @@
       </div>
     </div>
   </footer>
-<script src="auth-check.js"></script>  <!-- WHATSAPP INTEGRATION -->`n  <a href="https://wa.me/918041501718" class="whatsapp-btn" target="_blank" title="Chat on WhatsApp">`n      <svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>`n  </a>
+
+  <a href="https://wa.me/918041501718" class="whatsapp-btn" target="_blank" title="Chat on WhatsApp">
+      <svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+  </a>
+
+  <script src="auth-check.js"></script>
+  <script>
+    window.addEventListener('scroll', () => {
+      const nav = document.getElementById('navbar');
+      if (window.scrollY > 50) nav.classList.add('scrolled');
+      else nav.classList.remove('scrolled');
+    });
+  </script>
 </body>
 </html>
-
-
-
-
-
-
-
-

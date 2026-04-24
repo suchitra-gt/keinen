@@ -121,7 +121,13 @@
         height: 32px;
         fill: white;
     }
-  </style>
+  
+    .ind-card { min-height: 400px; background-size: cover; background-position: center; display: flex; align-items: flex-end; position: relative; overflow: hidden; border-radius: 24px; }
+    .ind-overlay { padding: 40px; width: 100%; background: linear-gradient(to top, rgba(0,0,0,0.9) 0%, rgba(0,0,0,0.4) 60%, transparent 100%); color: white !important; transition: 0.4s; }
+    .ind-overlay h4 { font-size: 24px; margin-bottom: 12px; color: white !important; }
+    .ind-overlay p { font-size: 14px; color: rgba(255,255,255,0.8) !important; margin-bottom: 0; }
+    .ind-card:hover .ind-overlay { background: linear-gradient(to top, var(--accent-1) 0%, rgba(0,0,0,0.6) 100%); }
+    </style>
 </head>
 
 <body>
@@ -192,6 +198,7 @@
   </script>
 </body>
 </html>
+
 
 
 
