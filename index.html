@@ -426,13 +426,13 @@
     }
 
     .reveal {
-      opacity: 0;
-      transform: translateY(30px);
-      transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+      opacity: 1 !important;
+      transform: none !important;
+      animation: fadeIn 0.8s ease-out;
     }
-    .reveal.active {
-      opacity: 1;
-      transform: translateY(0);
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
     }
 
     /* SECTION ANIMATED BACKGROUNDS */
@@ -1956,17 +1956,14 @@
       el.addEventListener('mouseleave', () => cursor.classList.remove('active'));
     });
 
-    // Reveal Logic Enhancement
-    const revealElements = document.querySelectorAll('.reveal');
-    const observer = new IntersectionObserver((entries) => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          entry.target.classList.add('active');
-        }
-      });
-    }, { threshold: 0.1 });
-
-    revealElements.forEach(el => observer.observe(el));
+    // Simple Force Reveal Logic
+    document.querySelectorAll('.reveal').forEach((el, index) => {
+      setTimeout(() => {
+        el.classList.add('active');
+        el.style.opacity = "1";
+        el.style.transform = "translateY(0)";
+      }, 100 + (index * 50));
+    });
 
     // Fallback for Hero (Immediate show)
     setTimeout(() => {

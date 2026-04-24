@@ -87,8 +87,8 @@
         position: relative;
     }
 
-    .reveal { opacity: 0; transform: translateY(30px); transition: 1s cubic-bezier(0.2, 0.8, 0.2, 1); }
-    .reveal.active { opacity: 1; transform: translateY(0); }
+    .reveal { opacity: 1 !important; transform: none !important; animation: fadeIn 0.8s ease-out; }
+    
 
     .stat-card { border-left: 4px solid var(--accent-1); padding: 20px 30px; background: rgba(255,255,255,0.02); border-radius: 0 20px 20px 0; }
     .stat-n { font-size: 56px; font-weight: 800; display: block; line-height: 1; }
@@ -223,7 +223,7 @@
     const observer = new IntersectionObserver((entries) => {
       entries.forEach(entry => { if (entry.isIntersecting) entry.target.classList.add('active'); });
     }, { threshold: 0.1 });
-        const revealElements = document.querySelectorAll('.reveal');
+            document.querySelectorAll('.reveal').forEach((el, index) => { setTimeout(() => { el.style.opacity = '1'; el.style.transform = 'translateY(0)'; }, 100 + (index * 50)); });
     const observer = new IntersectionObserver((entries) => { entries.forEach(entry => { if (entry.isIntersecting) entry.target.classList.add('active'); }); }, { threshold: 0.1 });
     revealElements.forEach(el => observer.observe(el));
     setTimeout(() => { document.querySelectorAll('.reveal').forEach(el => { if(el.getBoundingClientRect().top < window.innerHeight) el.classList.add('active'); }); }, 500);
@@ -236,6 +236,7 @@
   </script>
 </body>
 </html>
+
 
 
 
