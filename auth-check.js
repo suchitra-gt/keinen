@@ -2,7 +2,21 @@
 document.addEventListener('DOMContentLoaded', () => {
     updateNav();
     checkPageProtection();
+    trackVisitors();
 });
+
+function trackVisitors() {
+    // Total Visitors (increments on every page load)
+    let total = parseInt(localStorage.getItem('keinen_total_visitors') || '0');
+    localStorage.setItem('keinen_total_visitors', total + 1);
+
+    // Unique Visitors (increments once per browser/user)
+    if (!localStorage.getItem('keinen_is_unique')) {
+        let unique = parseInt(localStorage.getItem('keinen_unique_visitors') || '0');
+        localStorage.setItem('keinen_unique_visitors', unique + 1);
+        localStorage.setItem('keinen_is_unique', 'true');
+    }
+}
 
 function updateNav() {
     const navLinks = document.getElementById('nav-links');
