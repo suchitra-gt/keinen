@@ -36,7 +36,7 @@
     body {
       font-family: 'Plus Jakarta Sans', sans-serif;
       background-color: var(--bg-deep);
-      background-image: 
+      background-image:
         radial-gradient(circle at 20% 30%, rgba(229, 57, 53, 0.03) 0%, transparent 40%),
         radial-gradient(circle at 80% 70%, rgba(198, 40, 40, 0.03) 0%, transparent 40%);
       background-attachment: fixed;
@@ -48,8 +48,11 @@
     body::before {
       content: '';
       position: fixed;
-      top: 0; left: 0; width: 100%; height: 100%;
-      background-image: 
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-image:
         linear-gradient(var(--border) 1px, transparent 1px),
         linear-gradient(90deg, var(--border) 1px, transparent 1px);
       background-size: 50px 50px;
@@ -60,8 +63,13 @@
     }
 
     @keyframes gridShift {
-      from { background-position: 0 0; }
-      to { background-position: 50px 50px; }
+      from {
+        background-position: 0 0;
+      }
+
+      to {
+        background-position: 50px 50px;
+      }
     }
 
     .container {
@@ -87,8 +95,16 @@
     }
 
     @keyframes pulseIn {
-        0%, 100% { opacity: 0.6; }
-        50% { opacity: 1; letter-spacing: 5px; }
+
+      0%,
+      100% {
+        opacity: 0.6;
+      }
+
+      50% {
+        opacity: 1;
+        letter-spacing: 5px;
+      }
     }
 
     .h2-main {
@@ -121,7 +137,9 @@
     }
 
     @keyframes shine {
-      to { background-position: 200% center; }
+      to {
+        background-position: 200% center;
+      }
     }
 
     .reveal {
@@ -129,77 +147,93 @@
       transform: translateY(40px);
       transition: opacity 1s cubic-bezier(0.2, 0.8, 0.2, 1), transform 1s cubic-bezier(0.2, 0.8, 0.2, 1);
     }
+
     .reveal.active {
       opacity: 1;
       transform: translateY(0);
     }
 
-    .pill-card, .ind-card, .cta-card, .diff-item {
-        transition: transform 0.2s cubic-bezier(0.1, 0.7, 0.1, 1), border-color 0.4s ease, box-shadow 0.4s ease, background 0.4s ease;
-        position: relative;
-        z-index: 1;
-        cursor: pointer;
-        perspective: 1000px;
-        overflow: hidden;
-        background: rgba(255, 255, 255, 0.03);
-        border: 1px solid rgba(255, 255, 255, 0.08);
-    }
-    
-    .pill-card::before, .ind-card::before, .cta-card::before, .diff-item::before {
-        content: '';
-        position: absolute;
-        top: 0; left: 0; width: 100%; height: 100%;
-        background: radial-gradient(circle at var(--mouse-x) var(--mouse-y), rgba(229, 57, 53, 0.05) 0%, transparent 60%);
-        opacity: 0;
-        transition: opacity 0.5s ease;
-        pointer-events: none;
-        z-index: 10;
+    .pill-card,
+    .ind-card,
+    .cta-card,
+    .diff-item {
+      transition: transform 0.2s cubic-bezier(0.1, 0.7, 0.1, 1), border-color 0.4s ease, box-shadow 0.4s ease, background 0.4s ease;
+      position: relative;
+      z-index: 1;
+      cursor: pointer;
+      perspective: 1000px;
+      overflow: hidden;
+      background: rgba(255, 255, 255, 0.03);
+      border: 1px solid rgba(255, 255, 255, 0.08);
     }
 
-    .pill-card:hover::before, .ind-card:hover::before, .cta-card:hover::before, .diff-item:hover::before {
-        opacity: 1;
+    .pill-card::before,
+    .ind-card::before,
+    .cta-card::before,
+    .diff-item::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: radial-gradient(circle at var(--mouse-x) var(--mouse-y), rgba(229, 57, 53, 0.05) 0%, transparent 60%);
+      opacity: 0;
+      transition: opacity 0.5s ease;
+      pointer-events: none;
+      z-index: 10;
     }
 
-    .pill-card:hover, .ind-card:hover, .cta-card:hover, .diff-item:hover {
-        transform: scale(1.05) translateY(-20px);
-        z-index: 100 !important;
-        border-color: var(--accent-1);
-        background-color: var(--bg-deep) !important;
-        box-shadow: 0 40px 100px rgba(0,0,0,0.1), 0 0 40px rgba(229, 57, 53, 0.1);
+    .pill-card:hover::before,
+    .ind-card:hover::before,
+    .cta-card:hover::before,
+    .diff-item:hover::before {
+      opacity: 1;
+    }
+
+    .pill-card:hover,
+    .ind-card:hover,
+    .cta-card:hover,
+    .diff-item:hover {
+      transform: scale(1.05) translateY(-20px);
+      z-index: 100 !important;
+      border-color: var(--accent-1);
+      background-color: var(--bg-deep) !important;
+      box-shadow: 0 40px 100px rgba(0, 0, 0, 0.1), 0 0 40px rgba(229, 57, 53, 0.1);
     }
 
     .btn-p {
-        padding: 18px 40px;
-        background: var(--accent-1);
-        color: white !important;
-        border-radius: 100px;
-        font-weight: 800;
-        font-size: 14px;
-        text-decoration: none;
-        transition: 0.3s cubic-bezier(0.2, 0.8, 0.2, 1);
-        display: inline-flex;
-        align-items: center;
-        gap: 10px;
-        border: none;
-        cursor: pointer;
-        position: relative;
-        overflow: hidden;
+      padding: 18px 40px;
+      background: var(--accent-1);
+      color: white !important;
+      border-radius: 100px;
+      font-weight: 800;
+      font-size: 14px;
+      text-decoration: none;
+      transition: 0.3s cubic-bezier(0.2, 0.8, 0.2, 1);
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      border: none;
+      cursor: pointer;
+      position: relative;
+      overflow: hidden;
     }
 
     .btn-s {
-        padding: 18px 40px;
-        border: 1px solid var(--border);
-        border-radius: 100px;
-        font-weight: 800;
-        font-size: 14px;
-        text-decoration: none;
-        color: var(--primary-text) !important;
-        transition: 0.3s cubic-bezier(0.2, 0.8, 0.2, 1);
-        display: inline-flex;
-        align-items: center;
-        cursor: pointer;
-        background: transparent;
-        backdrop-filter: blur(10px);
+      padding: 18px 40px;
+      border: 1px solid var(--border);
+      border-radius: 100px;
+      font-weight: 800;
+      font-size: 14px;
+      text-decoration: none;
+      color: var(--primary-text) !important;
+      transition: 0.3s cubic-bezier(0.2, 0.8, 0.2, 1);
+      display: inline-flex;
+      align-items: center;
+      cursor: pointer;
+      background: transparent;
+      backdrop-filter: blur(10px);
     }
 
     .navbar {
@@ -257,23 +291,24 @@
       transition: 0.3s;
     }
 
-    .nav-links li a:hover, .nav-links li a.active {
+    .nav-links li a:hover,
+    .nav-links li a.active {
       color: var(--accent-1);
     }
 
     .menu-toggle {
-        display: none;
-        flex-direction: column;
-        gap: 6px;
-        cursor: pointer;
-        z-index: 1001;
+      display: none;
+      flex-direction: column;
+      gap: 6px;
+      cursor: pointer;
+      z-index: 1001;
     }
 
     .menu-toggle span {
-        width: 30px;
-        height: 2px;
-        background: var(--primary-text);
-        transition: 0.3s;
+      width: 30px;
+      height: 2px;
+      background: var(--primary-text);
+      transition: 0.3s;
     }
 
     .layout-grid {
@@ -394,20 +429,32 @@
         gap: 40px;
         text-align: center;
       }
+
       .nav-links {
-          position: fixed;
-          top: 0; right: -100%;
-          width: 80%; height: 100vh;
-          background: rgba(255,255,255,0.98);
-          flex-direction: column;
-          justify-content: center;
-          transition: 0.5s cubic-bezier(0.4, 0, 0.2, 1);
-          border-left: 1px solid var(--border);
-          backdrop-filter: blur(20px);
+        position: fixed;
+        top: 0;
+        right: -100%;
+        width: 80%;
+        height: 100vh;
+        background: rgba(255, 255, 255, 0.98);
+        flex-direction: column;
+        justify-content: center;
+        transition: 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+        border-left: 1px solid var(--border);
+        backdrop-filter: blur(20px);
       }
-      .nav-links.active { right: 0; }
-      .menu-toggle { display: flex; }
-      .foot-grid { grid-template-columns: 1fr 1fr; }
+
+      .nav-links.active {
+        right: 0;
+      }
+
+      .menu-toggle {
+        display: flex;
+      }
+
+      .foot-grid {
+        grid-template-columns: 1fr 1fr;
+      }
     }
   </style>
 </head>
@@ -424,21 +471,22 @@
         <li><a href="innovation.html">Innovation</a></li>
         <li><a href="industries.html">Industries</a></li>
         <li><a href="contact.html">Contact</a></li>
-        <li><a href="contact.html" class="btn-s" style="padding: 10px 20px; font-size: 11px; margin-left: 10px; border-color: var(--accent-1); color: var(--accent-1);">Talk to an Architect</a></li>
       </ul>
       <div class="menu-toggle" id="menu-toggle">
-          <span></span>
-          <span></span>
-          <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
       </div>
     </div>
   </nav>
 
   <section style="padding-top: 180px; background: var(--bg-soft);">
     <div class="container">
-        <span class="eyebrow">About Keinen</span>
-        <h1 class="h2-main">Architecting the <br><span class="text-gradient">Intelligent Enterprise.</span></h1>
-        <p style="font-size: 20px; max-width: 800px; color: var(--primary-text);">We are more than a technology provider. We are your digital transformation partner, dedicated to closing the gap between complex technology and operational excellence.</p>
+      <span class="eyebrow">About Keinen</span>
+      <h1 class="h2-main">Architecting the <br><span class="text-gradient">Intelligent Enterprise.</span></h1>
+      <p style="font-size: 20px; max-width: 800px; color: var(--primary-text);">We are more than a technology provider.
+        We are your digital transformation partner, dedicated to closing the gap between complex technology and
+        operational excellence.</p>
     </div>
   </section>
 
@@ -447,12 +495,16 @@
       <div>
         <span class="eyebrow">Our Identity</span>
         <h2 class="h2-main">"When technology is invisible, your people are unstoppable."</h2>
-        <p style="font-size: 18px; color: var(--primary-text);">Keinen is a team of multi-domain architects who treat IT, OT, Security, and Operations as one interconnected system.</p>
+        <p style="font-size: 18px; color: var(--primary-text);">Keinen is a team of multi-domain architects who treat
+          IT, OT, Security, and Operations as one interconnected system.</p>
 
         <div class="stats-grid" style="margin-top: 60px;">
-          <div class="stat-card"><span class="stat-n">99.995%</span><span class="stat-l">Data Center Uptime SLA</span></div>
-          <div class="stat-card"><span class="stat-n">9</span><span class="stat-l">Global Frameworks Applied</span></div>
-          <div class="stat-card"><span class="stat-n">7</span><span class="stat-l">Integrated Capability Pillars</span></div>
+          <div class="stat-card"><span class="stat-n">99.995%</span><span class="stat-l">Data Center Uptime SLA</span>
+          </div>
+          <div class="stat-card"><span class="stat-n">9</span><span class="stat-l">Global Frameworks Applied</span>
+          </div>
+          <div class="stat-card"><span class="stat-n">7</span><span class="stat-l">Integrated Capability Pillars</span>
+          </div>
         </div>
       </div>
       <div>
@@ -488,25 +540,31 @@
       <div style="max-width: 800px; margin: 0 auto; text-align: center; margin-bottom: 80px;">
         <span class="eyebrow">The Keinen Philosophy</span>
         <h2 class="h2-main">Built to Build What Others Cannot.</h2>
-        <p>We think in ecosystems — every challenge is viewed as a complete picture. Engineers are trained across IT, OT, cybersecurity, data center, video, and collaboration. No silos, no hand-offs.</p>
-        <p style="font-size: 20px; font-weight: 700; color: var(--primary-text); font-style: italic;">"Technology should be the silent engine of your success — not the loudest problem in your boardroom."</p>
+        <p>We think in ecosystems — every challenge is viewed as a complete picture. Engineers are trained across IT,
+          OT, cybersecurity, data center, video, and collaboration. No silos, no hand-offs.</p>
+        <p style="font-size: 20px; font-weight: 700; color: var(--primary-text); font-style: italic;">"Technology should
+          be the silent engine of your success — not the loudest problem in your boardroom."</p>
       </div>
 
-        <div class="layout-grid">
-            <div>
-                <h3 class="h3-main">Mission, Vision & Values</h3>
-                <div style="background: var(--bg-deep); padding: 40px; border-radius: 24px; border: 1px solid var(--border); margin-bottom: 24px;">
-                    <h4 style="color:var(--accent-1); margin-bottom:8px;">Mission</h4>
-                    <p style="margin-bottom:24px;">Eliminate the gap between technology potential and operational reality.</p>
-                    <h4 style="color:var(--accent-1); margin-bottom:8px;">Vision</h4>
-                    <p style="margin-bottom:0;">Every enterprise on infrastructure so intelligent it becomes the most invisible, most powerful force in their business.</p>
-                </div>
-            </div>
-            
-            <div class="reveal">
-                <img src="https://images.openai.com/static-rsc-4/vUnEe1xbLw8UFRY933OL7POUcUF7B19pAHVIAY-U6HvQTgbPVgdxLyO4XZ12-cLxje1IIa9GCQgTx9MYybUQz1Z62m5_4FZ2QVfj5ORFYku9XAwEAzclsrf3Cit-ZJDqwJo6g2iJ3j3Rc-KSAQVxL968DfxFW0fjiZlaq5dXR5jminUKyIyVjsH3mJxH1fVG?purpose=fullsize" alt="About Keinen" style="width: 100%; border-radius: 24px; box-shadow: 0 20px 40px rgba(0,0,0,0.5);">
-            </div>
+      <div class="layout-grid">
+        <div>
+          <h3 class="h3-main">Mission, Vision & Values</h3>
+          <div
+            style="background: var(--bg-deep); padding: 40px; border-radius: 24px; border: 1px solid var(--border); margin-bottom: 24px;">
+            <h4 style="color:var(--accent-1); margin-bottom:8px;">Mission</h4>
+            <p style="margin-bottom:24px;">Eliminate the gap between technology potential and operational reality.</p>
+            <h4 style="color:var(--accent-1); margin-bottom:8px;">Vision</h4>
+            <p style="margin-bottom:0;">Every enterprise on infrastructure so intelligent it becomes the most invisible,
+              most powerful force in their business.</p>
+          </div>
         </div>
+
+        <div class="reveal">
+          <img
+            src="https://images.openai.com/static-rsc-4/vUnEe1xbLw8UFRY933OL7POUcUF7B19pAHVIAY-U6HvQTgbPVgdxLyO4XZ12-cLxje1IIa9GCQgTx9MYybUQz1Z62m5_4FZ2QVfj5ORFYku9XAwEAzclsrf3Cit-ZJDqwJo6g2iJ3j3Rc-KSAQVxL968DfxFW0fjiZlaq5dXR5jminUKyIyVjsH3mJxH1fVG?purpose=fullsize"
+            alt="About Keinen" style="width: 100%; border-radius: 24px; box-shadow: 0 20px 40px rgba(0,0,0,0.5);">
+        </div>
+      </div>
     </div>
   </section>
 
@@ -515,7 +573,8 @@
       <div class="foot-grid">
         <div class="foot-col">
           <div class="logo" style="margin-bottom: 24px;">KEI<span>N</span>EN</div>
-          <p style="font-size: 14px;">Keinen Techne Solutions Pvt. Ltd.<br>We architect integrated digital ecosystems for enterprises to perform at full potential.</p>
+          <p style="font-size: 14px;">Keinen Techne Solutions Pvt. Ltd.<br>We architect integrated digital ecosystems
+            for enterprises to perform at full potential.</p>
         </div>
         <div class="foot-col">
           <h5>Quick Links</h5>
@@ -538,7 +597,8 @@
         </div>
         <div class="foot-col">
           <h5>Contact</h5>
-          <p style="font-size: 13px; color: var(--secondary-text);">📞 +91 80415 01718<br>✉️ info@keinen.in<br>📍 Bengaluru, India</p>
+          <p style="font-size: 13px; color: var(--secondary-text);">📞 +91 80415 01718<br>✉️ info@keinen.in<br>📍
+            Bengaluru, India</p>
         </div>
       </div>
       <div class="f-bottom">
@@ -552,12 +612,13 @@
     </div>
   </footer>
 
+  <script src="auth-check.js"></script>
   <script>
     const observer = new IntersectionObserver((entries) => {
       entries.forEach(entry => { if (entry.isIntersecting) entry.target.classList.add('active'); });
     }, { threshold: 0.1 });
     document.querySelectorAll('.reveal, .cap-item, .stat-card').forEach(el => observer.observe(el));
-    
+
     window.addEventListener('scroll', () => {
       const nav = document.getElementById('navbar');
       if (window.scrollY > 50) nav.classList.add('scrolled');
@@ -567,9 +628,10 @@
     const menuToggle = document.getElementById('menu-toggle');
     const navLinks = document.getElementById('nav-links');
     menuToggle.addEventListener('click', () => {
-        menuToggle.classList.toggle('active');
-        navLinks.classList.toggle('active');
+      menuToggle.classList.toggle('active');
+      navLinks.classList.toggle('active');
     });
   </script>
 </body>
+
 </html>
